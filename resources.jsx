@@ -1,22 +1,22 @@
 <>
   &lt;&gt;
   {/* Header component */}
-  <header classname="header">
-    <div classname="logo">
-      <span classname="course">React Exercise - Components Deep Dive</span>
+  <header className="header">
+    <div className="logo">
+      <span className="course">React Exercise - Components Deep Dive</span>
     </div>
   </header>
   {/* Main component */}
-  <main classname="main">
-    <section classname="card users-container">
-      <div classname="search-form">
+  <main className="main">
+    <section className="card users-container">
+      <div className="search-form">
         <h2>
           <svg
             aria-hidden="true"
             focusable="false"
             data-prefix="fas"
             data-icon="user"
-            classname="svg-inline--fa fa-user SearchBar_icon__cXpTg"
+            className="svg-inline--fa fa-user SearchBar_icon__cXpTg"
             role="img"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 512"
@@ -30,7 +30,7 @@
         </h2>
       </div>
       {/* Table component */}
-      <div classname="table-wrapper">
+      <div className="table-wrapper">
         {/* Overlap components */}
         <div className="loading-shade">
           {/* Loading spinner */}
@@ -94,7 +94,7 @@
           </div>
         </div>
         {/* Table row component */}
-        <table classname="table">
+        <table className="table">
           <thead>
             <tr>
               <th>Image</th>
@@ -105,7 +105,7 @@
                   focusable="false"
                   data-prefix="fas"
                   data-icon="arrow-down"
-                  classname="icon svg-inline--fa fa-arrow-down Table_icon__+HHgn"
+                  className="icon svg-inline--fa fa-arrow-down Table_icon__+HHgn"
                   role="img"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 384 512"
@@ -123,7 +123,7 @@
                   focusable="false"
                   data-prefix="fas"
                   data-icon="arrow-down"
-                  classname="icon svg-inline--fa fa-arrow-down Table_icon__+HHgn"
+                  className="icon svg-inline--fa fa-arrow-down Table_icon__+HHgn"
                   role="img"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 384 512"
@@ -137,7 +137,7 @@
               <th>
                 Email
                 <svg
-                  classname="icon"
+                  className="icon"
                   aria-hidden="true"
                   focusable="false"
                   data-prefix="fas"
@@ -159,7 +159,7 @@
                   focusable="false"
                   data-prefix="fas"
                   data-icon="arrow-down"
-                  classname="icon svg-inline--fa fa-arrow-down Table_icon__+HHgn"
+                  className="icon svg-inline--fa fa-arrow-down Table_icon__+HHgn"
                   role="img"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 384 512"
@@ -177,7 +177,7 @@
                   focusable="false"
                   data-prefix="fas"
                   data-icon="arrow-down"
-                  classname="icon active-icon svg-inline--fa fa-arrow-down Table_icon__+HHgn"
+                  className="icon active-icon svg-inline--fa fa-arrow-down Table_icon__+HHgn"
                   role="img"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 384 512"
@@ -197,7 +197,7 @@
                 <img
                   src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
                   alt="Peter's profile"
-                  classname="image"
+                  className="image"
                 />
               </td>
               <td>Peter</td>
@@ -205,14 +205,14 @@
               <td>peter@abv.bg</td>
               <td>0812345678</td>
               <td>June 28, 2022</td>
-              <td classname="actions">
-                <button classname="btn edit-btn" title="Edit">
+              <td className="actions">
+                <button className="btn edit-btn" title="Edit">
                   <svg
                     aria-hidden="true"
                     focusable="false"
                     data-prefix="fas"
                     data-icon="pen-to-square"
-                    classname="svg-inline--fa fa-pen-to-square"
+                    className="svg-inline--fa fa-pen-to-square"
                     role="img"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 532 512"
@@ -223,13 +223,13 @@
                     />
                   </svg>
                 </button>
-                <button classname="btn delete-btn" title="Delete">
+                <button className="btn delete-btn" title="Delete">
                   <svg
                     aria-hidden="true"
                     focusable="false"
                     data-prefix="fas"
                     data-icon="trash"
-                    classname="svg-inline--fa fa-trash"
+                    className="svg-inline--fa fa-trash"
                     role="img"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 498 512"
@@ -240,13 +240,13 @@
                     />
                   </svg>
                 </button>
-                <button classname="btn info-btn" title="Info">
+                <button className="btn info-btn" title="Info">
                   <svg
                     aria-hidden="true"
                     focusable="false"
                     data-prefix="fas"
                     data-icon="info"
-                    classname="svg-inline--fa fa-info"
+                    className="svg-inline--fa fa-info"
                     role="img"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="-150 0 512 612"
@@ -263,27 +263,27 @@
         </table>
       </div>
       {/* New user button */}
-      <button classname="btn-add btn">Add new user</button>
+      <button className="btn-add btn">Add new user</button>
       {/* Pagination component */}
-      <div classname="pagination position">
-        <div classname="limits">
+      <div className="pagination position">
+        <div className="limits">
           <span>Items per page:</span>
-          <select name="limit" classname="limit" value="{5}">
+          <select name="limit" className="limit" value="{5}">
             <option value="{5}">5</option>
             <option value="{5}">10</option>
             <option value="{5}">15</option>
             <option value="{5}">20</option>
           </select>
         </div>
-        <p classname="pages">1 - 1 of 1</p>
-        <div classname="actions">
-          <button classname="btn" title="First Page">
+        <p className="pages">1 - 1 of 1</p>
+        <div className="actions">
+          <button className="btn" title="First Page">
             <svg
               aria-hidden="true"
               focusable="false"
               data-prefix="fas"
               data-icon="angles-left"
-              classname="svg-inline--fa fa-angles-left"
+              className="svg-inline--fa fa-angles-left"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 448 512"
@@ -294,13 +294,13 @@
               />
             </svg>
           </button>
-          <button classname="btn" title="Previous Page">
+          <button className="btn" title="Previous Page">
             <svg
               aria-hidden="true"
               focusable="false"
               data-prefix="fas"
               data-icon="angle-left"
-              classname="svg-inline--fa fa-angle-left"
+              className="svg-inline--fa fa-angle-left"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 256 512"
@@ -311,13 +311,13 @@
               />
             </svg>
           </button>
-          <button classname="btn" title="Next Page">
+          <button className="btn" title="Next Page">
             <svg
               aria-hidden="true"
               focusable="false"
               data-prefix="fas"
               data-icon="angle-right"
-              classname="svg-inline--fa fa-angle-right"
+              className="svg-inline--fa fa-angle-right"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 256 512"
@@ -328,13 +328,13 @@
               />
             </svg>
           </button>
-          <button classname="btn" title="Last Page">
+          <button className="btn" title="Last Page">
             <svg
               aria-hidden="true"
               focusable="false"
               data-prefix="fas"
               data-icon="angles-right"
-              classname="svg-inline--fa fa-angles-right"
+              className="svg-inline--fa fa-angles-right"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 448 512"
@@ -577,6 +577,7 @@
     </div>
   </main>
   {/* Footer component */}
-  &lt; footer className="footer" &gt;
-  <p>This site is designed to be used for training purposes at SoftUni.</p>
+  <footer className="footer">
+    <p>This site is designed to be used for training purposes at SoftUni.</p>
+  </footer>
 </>
