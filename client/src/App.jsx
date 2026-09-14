@@ -9,6 +9,7 @@ import CreateUserModal from "./components/CreateUserModal"
 function App() {
 	const [users, setUsers] = useState([]);
 	const [showCreateUser, setShowCreateUser] = useState(false);
+	const [forceRefresh, setForceRefresh] = useState(true);
 
 	useEffect(() => {
 		fetch('http://localhost:3030/jsonstore/users')
@@ -17,7 +18,7 @@ function App() {
 				setUsers(Object.values(result));
 			})
 			.catch(err => alert(err.message));
-	}, []);
+	}, [forceRefresh]);
 
 	const addUserClickHandler = () => {
 		console.log('user');
@@ -54,10 +55,8 @@ function App() {
 			},
 			body: JSON.stringify(userData),
 		})
-			.then(response => response.json())
-			.then(result => {
-				console.log(result);
-			})
+			.then(() => setForceRefresh(state => !state))
+			.catch(err => alert(err.message));
 	}
 
 	return (
