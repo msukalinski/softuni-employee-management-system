@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 import Pagination from "./components/Pagination"
@@ -7,7 +7,17 @@ import UserList from "./components/UserList"
 import CreateUserModal from "./components/CreateUserModal"
 
 function App() {
+	const [users, setUsers] = useState([]);
 	const [showCreateUser, setShowCreateUser] = useState(false);
+
+	useEffect(() => {
+		fetch('http://localhost:3030/jsonstore/users')
+			.then(response => response.json())
+			.then(result => {
+				setUsers(Object.values(result));
+			})
+			.catch(err => alert(err.message));
+	}, []);
 
 	const addUserClickHandler = () => {
 		console.log('user');
@@ -24,9 +34,30 @@ function App() {
 
 		const formData = new FormData(e.target);
 
-		const userData = Object.fromEntries(formData);
+		const { country, city, street, streetNumber, ...userData } = Object.fromEntries(formData);
+		userData.address = {
+			country,
+			city,
+			street,
+			streetNumber
+		}
+
+		userData.createdAt = new Date().toISOString();
+		userData.updatedAt = new Date().toISOString();
 
 		console.log(userData);
+
+		fetch('http://localhost:3030/jsonstore/users', {
+			method: 'POST',
+			headers: {
+				'content-type': 'application/json'
+			},
+			body: JSON.stringify(userData),
+		})
+			.then(response => response.json())
+			.then(result => {
+				console.log(result);
+			})
 	}
 
 	return (
@@ -37,7 +68,7 @@ function App() {
 				<section className="card users-container">
 					<Search />
 
-					<UserList />
+					<UserList users={users} />
 
 					<button className="btn-add btn" onClick={addUserClickHandler}>Add new user</button>
 
