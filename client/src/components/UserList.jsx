@@ -1,11 +1,14 @@
 import { useState } from "react";
 import DetailsUserComponent from "./DetailsUserModal";
 import UserItem from "./UserItem";
+import DeleteUserModal from "./DeleteUserModal";
 
 export default function UserList({
     users,
+    forceUserRefresh
 }) {
     const [showUserDetails, setShowUserDetails] = useState(false);
+    const [showUserDelete, setShowUserDelete] = useState(false);
     const [selectedUserId, setSelectedUserId] = useState(null);
 
     const detailsActionClickHandler = (userId) => {
@@ -13,9 +16,15 @@ export default function UserList({
         setSelectedUserId(userId);
     }
 
+    const deleteActionClickHandler = (userId) => {
+        setShowUserDelete(true);
+        setSelectedUserId(userId);
+    }
+
     const closeModalHandler = () => {
         setShowUserDetails(false);
-        
+        setShowUserDelete(false);
+        setSelectedUserId(null);
     }
 
     return (
@@ -186,6 +195,7 @@ export default function UserList({
                             {...user}
                             key={user._id}
                             onDetailsClick={detailsActionClickHandler}
+                            onDeleteClick={deleteActionClickHandler}
                         />)}
                 </tbody>
             </table>
@@ -194,6 +204,13 @@ export default function UserList({
                 <DetailsUserComponent
                     userId={selectedUserId}
                     onClose={closeModalHandler}
+                />)}
+
+            {showUserDelete && (
+                <DeleteUserModal
+                    userId = {selectedUserId}
+                    onClose={closeModalHandler}
+                    forceUserRefresh={forceUserRefresh}
                 />)}
 
         </div>
