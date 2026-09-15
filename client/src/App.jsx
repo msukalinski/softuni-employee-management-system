@@ -55,7 +55,10 @@ function App() {
 			},
 			body: JSON.stringify(userData),
 		})
-			.then(() => setForceRefresh(state => !state))
+			.then(() => {
+				closeUserModalHandler();
+				setForceRefresh(state => !state);
+			})
 			.catch(err => alert(err.message));
 	}
 
